@@ -1,0 +1,18 @@
+{
+    "atac.title" : "ATAC-Seq Samples",
+    "atac.description" : "Sample Name",
+
+    "atac.pipeline_type" : "atac",
+    "atac.align_only" : false,
+    "atac.true_rep_only" : false,
+
+    "atac.genome_tsv" : "/cluster/tools/data/commondata/ENCODE/atac-seq/hg38/hg$
+
+    "atac.paired_end" : true,
+
+    "atac.fastqs_rep1_R1" : [ "SAMPLE_R1.fastq.gz"],
+    "atac.fastqs_rep1_R2" : [ "SAMPLE_R2.fastq.gz"],
+
+
+    "atac.auto_detect_adapter" : true
+}
