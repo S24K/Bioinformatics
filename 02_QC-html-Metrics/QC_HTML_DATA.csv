@@ -1,7 +1,7 @@
-FASTQ,Total reads,Mapped reads,Unique Reads,Fraction of reads in peaks (FRiP),TSS enrichment,Insert size distribution,Peak number,Library complexity,Signal-to-noise ratio,Mitochondrial DNA content,NRF (Non-redundant Fraction),PBC1 (PCR Bottlenecking Coefficient 1),PBC2 (PCR Bottlenecking Coefficient 2),Duplicate rate,
-CSC449N,210276192,96.4,63.15,0.61,26.98,,168947,60291928,,0.18,0.82,0.86,8.3,33.25,
-POP161,194143058,97.3,76.01,0.46,22.02,,231936,64931777,,0.088,0.86,0.88,9.38,21.29,
-CSC_522,141304092,98.4,68.22,0.57,25.03,,177474,43454720,,0.15,0.81,0.84,6.39,30.18,
-POP_074,150479596,98.6,74.42,0.43,20.67,,203926,49267285,,0.11,0.85,0.86,7.69,24.17,
-POP160,306139890,99.3,85.61,0.18,7.18,,299118,109688010,,0.032,0.89,0.89,9.3,13.69,
-POP_170,136495680,98.3,63.85,0.58,23.47,,203673,39189881,,0.19,0.82,0.84,"	6.49",34.45,
+FASTQ,Total reads,Mapped reads,Unique Reads,Fraction of reads in peaks (FRiP),TSS enrichment,Insert size distribution,Peak number,Library complexity,Signal-to-noise ratio,Mitochondrial DNA content,NRF (Non-redundant Fraction),PBC1 (PCR Bottlenecking Coefficient 1),PBC2 (PCR Bottlenecking Coefficient 2),Duplicate rate
+CSC449N,210276192,96.4,63.15,0.61,26.98,,168947,60291928,,0.18,0.82,0.86,8.3,33.25
+POP161,194143058,97.3,76.01,0.46,22.02,,231936,64931777,,0.088,0.86,0.88,9.38,21.29
+CSC_522,141304092,98.4,68.22,0.57,25.03,,177474,43454720,,0.15,0.81,0.84,6.39,30.18
+POP_074,150479596,98.6,74.42,0.43,20.67,,203926,49267285,,0.11,0.85,0.86,7.69,24.17
+POP160,306139890,99.3,85.61,0.18,7.18,,299118,109688010,,0.032,0.89,0.89,9.3,13.69
+POP_170,136495680,98.3,63.85,0.58,23.47,,203673,39189881,,0.19,0.82,0.84,"	6.49",34.45
