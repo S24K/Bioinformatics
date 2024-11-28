@@ -1,0 +1,34 @@
+,CSC_432,CSC_433,CSC_478,POP_92,POP_160
+scMultiome QC metrics,,,,,
+Estimated Number of Cells,"6,662","9,250","6,993","9,218","8,955"
+ATAC Median Fragments per Cell,"14,722","13,866","22,841","14,158","10,876"
+GEX Median Genes per Cell,"5,524","5,623",999,"5,788","5,089"
+Sequenced Read Pairs (ATAC),"366,639,797","431,719,511","305,681,942","381,739,526","440,007,550"
+Valid Barcodes,96.2,96.6,97.7,97.3,96.4
+Q30 Bases in Barcode (ATAC),84.3,85.4,91.1,90.6,85.6
+Q30 Bases in Read 1 (ATAC),94.3,94.4,95.6,95.7,94
+Q30 Bases in Read 2 (ATAC),92,93.1,92.6,92.1,93.2
+Percent Duplicates (ATAC),25.2,21.7,17.4,35.9,25.6
+Number of Peaks (ATAC),"121,403","112,768","154,393","184,828","144,236"
+TSS Enrichment (ATAC),7.75,6.24,7.07,7.85,6.14
+Fraction of Fragments Overlapping Peaks,52,27.6,32.9,37.7,30.8
+Fraction of Fragments Overlapping TSS,34.6,47.6,56.3,61.2,47.5
+,,,,,
+Joint Metrics,,,,,
+Metric,,,,,
+Feature Linkages Detected,"129,064","16,160","10,021","101,078","21,841"
+Linked Genes,"10,835","4,338","1,323","11,179","5,227"
+Linked Peaks,"34,289","12,211","7,751","38,555","18,038"
+Correlation Between ATAC and GEX,,,,,
+Number of Distal Linkages,,,,,
+Proportion of Significant Linkages,,,,,
+,,,,,
+Addition Metrics,,,,,
+Sequencing Saturation (ATAC),,,,,
+Sequencing Saturation (GEX),,,,,
+Fraction of Readis in Peaks (ATAC),,,,,
+Fraction of Transcripts  Mapped to Genome (GEX),97.5,97.4,25.4,97.5,97.9
+Median UMI Counts per Cell (GEX),"21,034","23,252","2,341","19,994","17,162"
+Median Fragmets per Peak (ATAC),"14,722","13,866","22,841","14,158","10,876"
+Proportion of High-Quality Fragments (ATAC),65.6,55.3,87,89.6,55.2
+Proportion of Read Pairs Passing Filters (ATAC),88.3,89.2,90.3,91.1,88.7
