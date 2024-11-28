@@ -6,7 +6,7 @@
     "atac.align_only" : false,
     "atac.true_rep_only" : false,
 
-    "atac.genome_tsv" : "/cluster/tools/data/commondata/ENCODE/atac-seq/hg38/hg$
+    "atac.genome_tsv" : "/cluster/tools/data/commondata/ENCODE/atac-seq/hg38/hg$"
 
     "atac.paired_end" : true,
 
