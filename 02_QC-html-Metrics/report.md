@@ -40,5 +40,15 @@ The QC process focuses on key metrics such as read alignment, library complexity
 - Definition: Proportion of reads mapping to mitochondrial DNA.
 - Relevance: High values may indicate mitochondrial contamination or cell stress.
 
+## Visualizations and Insights
+The HTML QC report includes various graphs and plots to represent these metrics visually. Key visualizations include:
+- Insert Size Distribution: Displays the distribution of fragment lengths. Sharp peaks often indicate well-prepared libraries.
+- Alignment Summary: Bar charts showing the percentage of mapped, uniquely mapped, and duplicate reads.
+- FRiP and TSS Enrichment: Scatter or bar plots for assessing signal-to-noise quality.
+- Duplication Metrics: Graphs highlighting duplication rates and library complexity.
+- Peak Coverage: Tracks the distribution and overlap of reads within peaks.
+- Quality Score Distribution: Visualizes the base call accuracy across all reads.
+Each metric is evaluated against expected thresholds or benchmarks to ensure the sequencing experiment meets quality standards. The insights gained from these reports guide troubleshooting and optimization for future experiments.
 
-
+## Conclusion
+The QC HTML reports are indispensable for interpreting the quality and reliability of sequencing data. By analyzing the detailed metrics and graphs, we ensure that the data meets the standards necessary for accurate downstream analyses. This thorough QC evaluation strengthens confidence in the experimental results and the biological conclusions drawn.
