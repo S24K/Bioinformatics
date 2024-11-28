@@ -39,15 +39,6 @@ This repository documents my achievements and progress during my bioinformatics 
 
 ---
 
-## Repository Structure  
-
-- `data/`: Contains input files, FASTQ metadata, and results for different experiments.  
-- `scripts/`: Includes R and shell scripts used for data processing and analysis.  
-- `results/`: Output files, including QC reports and processed data visualizations.  
-- `report.md`: Detailed project documentation with methodologies, visualizations, and results.  
-
----
-
 ## Tools & Techniques  
 
 - **Languages**: R, Shell Scripting, Markdown  
