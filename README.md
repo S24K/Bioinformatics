@@ -1,6 +1,6 @@
 # Bioinformatics Co-op Term Summary  
 
-This repository documents my achievements and progress during my bioinformatics co-op term. It highlights the tools, pipelines, and analyses I worked on, focusing on **ATAC-Seq**, **Single-Cell Multiome** data processing, and **Quality Control (QC)** evaluations.  
+This repository documents my achievements and progress during my bioinformatics co-op term. It highlights the tools, pipelines, and analyses I worked on, focusing on **ATAC-Seq**, **Single-Cell Multiome** data processing, **DiffBind Analysis**, and **Quality Control (QC)** evaluations.  
 
 ---
 
@@ -13,18 +13,29 @@ This repository documents my achievements and progress during my bioinformatics 
   - Submitted jobs via `.sh` scripts to execute ENCODE workflows.  
   - Visualized outputs to interpret differential chromatin accessibility and generate meaningful biological insights.  
 
-### 2. **Single-Cell Multiome Analysis**  
+### 2. **Quality Control (QC)**  
+- **Objective**: Ensure sequencing data meets high-quality standards.  
+- **Highlights**:  
+  - Generated QC HTML reports to evaluate metrics such as **mapped reads**, **duplicate rate**, **library complexity**, and **signal-to-noise ratios**.  
+  - Assessed metrics like **FRiP**, **TSS enrichment**, and **mitochondrial DNA content** for validation.  
+  - Visualized key data quality metrics with R scripts.  
+
+### 3. **Single-Cell Multiome Analysis**  
 - **Objective**: Process and analyze single-cell multiome data (ATAC + GEX).  
 - **Highlights**:  
   - Analyzed metrics like **cell count**, **ATAC/GEX fragment counts**, and **peak number** for five samples (`CSC_432`, `CSC_433`, `CSC_478`, `POP_92`, `POP_160`).  
   - Created custom R scripts to generate bar plots for key metrics and explore dataset quality.  
 
-### 3. **Quality Control (QC)**  
-- **Objective**: Ensure sequencing data meets high-quality standards.  
+### 4. **DiffBind Analysis**  
+- **Objective**: Identify differential binding sites between transcription factors **Nanog** and **Pou5f1**.  
 - **Highlights**:  
-  - Generated QC HTML reports to evaluate metrics such as **mapped reads**, **duplicate rate**, **library complexity**, and **signal-to-noise ratios**.  
-  - Assessed metrics like **FRiP**, **TSS enrichment**, and **mitochondrial DNA content** for validation.  
-  - Visualized key data quality metrics with R scripts.
+  - Configured a sample CSV file listing BAM files, peak files, replicates, and metadata.  
+  - Used the **DiffBind R package** to perform:  
+    - **Sample Clustering**: PCA plots to visualize sample relationships.  
+    - **Correlation Heatmaps**: Assessing replicate consistency.  
+    - **Differential Analysis**: Performed using DESeq2 and edgeR pipelines.  
+    - **Visualizations**: MA plots, Venn diagrams, and boxplots to showcase enriched regions.  
+  - Achieved memory optimization by running R scripts on a high-performance cluster with a 33GB memory requirement.  
 
 ---
 
@@ -40,20 +51,12 @@ This repository documents my achievements and progress during my bioinformatics 
 ## Tools & Techniques  
 
 - **Languages**: R, Shell Scripting, Markdown  
-- **Tools**: ENCODE ATAC-Seq Pipeline, MultiQC, ggplot2  
+- **Tools**: ENCODE ATAC-Seq Pipeline, DiffBind, MultiQC, ggplot2  
 - **Platforms**: High-performance cluster computing, GitHub  
 
 ---
 
 ## Acknowledgments  
 
-I am grateful to the University Health Network (UHN) and my co-op supervisors for providing guidance and resources throughout this term.
+I am grateful to the University Health Network (UHN), my co-op supervisor Elias Orouji, and Bioinformatician Amin Noorani for providing guidance and resources throughout this term.
 
----
-
-## How to Use  
-
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/username/bioinformatics.git
-   cd bioinformatics
