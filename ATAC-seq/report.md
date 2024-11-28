@@ -16,16 +16,103 @@ Using the ENCODE pipeline, I processed six ATAC-seq datasets to assess chromatin
 ## 3. Workflow/Methodology  
 
 ### Step 1: Preparing Configuration Files (.json)  
-Each sample required a `.json` configuration file specifying:  
-- Input BAM files and peak files.  
-- Metadata including sample names and experimental conditions.  
-- ENCODE pipeline parameters (e.g., species, reference genome).  
+Each sample required a `.json` configuration file specifying essential pipeline parameters, including the input FASTQ files, genome reference, and experimental details. Below is an example of a .json file used for the sample POP_170:
 
-Example snippet from a `.json` file:  
 ```json
 {
-  "atac.pipeline_type": "atac-seq",
-  "atac.genome_tsv": "/path/to/genome.tsv",
-  "atac.bam": ["/path/to/sample_CSC449N.bam"],
-  "atac.paired_end": true
+    "atac.title" : "ATAC-Seq Samples",
+    "atac.description" : "Souren - POP_170",
+
+    "atac.pipeline_type" : "atac",
+    "atac.align_only" : false,
+    "atac.true_rep_only" : false,
+
+    "atac.genome_tsv" : "/cluster/tools/data/commondata/ENCODE/atac-seq/hg38/hg38.tsv",
+
+    "atac.paired_end" : true,
+
+    "atac.fastqs_rep1_R1" : [ "POP_170_lib_S16_L002_R1_001.fastq.gz"],
+    "atac.fastqs_rep1_R2" : [ "POP_170_lib_S16_L002_R2_001.fastq.gz"],
+
+    "atac.auto_detect_adapter" : true
 }
+```
+#### Key Components:
+- `atac.title` and `atac.description`: General information about the project and sample.
+- `atac.pipeline_type`: Specifies the type of pipeline (`atac` for ATAC-Seq).
+- `atac.genome_tsv`: Path to the genome reference file required for alignment (e.g., `hg38.tsv`).
+- `atac.fastqs_rep1_R1` and `atac.fastqs_rep1_R2`: Paths to the paired-end FASTQ files for the sample.
+- `atac.auto_detect_adapter`: Automatically detects adapter sequences in the reads.
+
+Each sample had its `.json` file updated with the corresponding `R1` and `R2` FASTQ paths and unique descriptions, ensuring accurate configuration for the ENCODE pipeline.
+
+### Step 2: Writing the SLURM Submission Script (.sh)
+The `.sh` file was created to submit the pipeline jobs to the HPC cluster via SLURM. Key components included:
+- Specifying computational resources (e.g., memory, CPU, runtime).
+- Loading required modules
+- Calling the pipeline execution command with the `.json` file as input.
+
+Example snippet from a `.sh` file:
+
+```bash
+
+#!/bin/bash
+#SBATCH -J ATAC_JOB_1           # Job name
+#SBATCH -N 1                    # Number of nodes
+#SBATCH -c 1                    # Number of cores
+#SBATCH -p all                  # Partition (queue) to submit
+#SBATCH --time=5-00:00:00       # Runtime in days-hh:mm:ss
+#SBATCH --mem=15g               # Memory required
+#SBATCH -e ATAC_JOB-2.err       # File to write errors to
+#SBATCH --mail-type=END,FAIL    # Notify when the job ends or fails (optional)
+#SBATCH --mail-user=souren.haghbin@uhn.ca  # Email to notify (optional)
+
+cd /cluster/projects/epigenomics/Souren/fast_q/POP_170
+
+module load atac-seq-pipeline/2.2.2
+
+caper hpc submit $pipeline_home/atac.wdl -i /cluster/home/t134491uhn/job_submis$
+$pipeline_home/cromwell-86.jar --local-loc-dir ./ --backend slurm \
+--slurm-account epigenomics --slurm-partition himem
+```
+### Step 3: Submitting Jobs to the Cluster
+The `.sh` files were submitted using the `sbatch` command. For example:
+
+```bash
+
+sbatch submit_CSC449N.sh
+
+```
+
+### Step 4: Monitoring and Managing Jobs
+I used SLURM commands (`squeue`, `scancel`, etc.) to monitor the status of jobs and address resource bottlenecks or errors when necessary.
+
+### Step 5: Collecting and Analyzing Results
+After the pipeline finished running, I analyzed the outputs, including:
+
+- Processed BAM files.
+- NarrowPeak and BroadPeak files.
+- Quality control reports (e.g., FRiP scores, TSS enrichment).
+
+## 4. Results
+Each of the six samples was successfully processed. Key metrics included:
+- CSC449N: FRiP = 0.61, TSS Enrichment = 26.98
+- POP161: FRiP = 0.46, TSS Enrichment = 22.02
+- CSC_522: FRiP = 0.57, TSS Enrichment = 25.03
+- POP_074: FRiP = 0.43, TSS Enrichment = 20.67
+- POP160: FRiP = 0.18, TSS Enrichment = 7.18
+- POP_170: FRiP = 0.58, TSS Enrichment = 23.47
+
+Overall, the results confirmed high-quality ATAC-seq data for each sample.
+
+## 5. Challenges and Solutions
+
+### Challenge 1: Memory Allocation Errors
+- Solution: Increased the `--mem` parameter in the `.sh` file to 64GB for larger datasets.
+### Challenge 2: Job Failures Due to Input Errors
+- Solution: Validated `.json` files using the ENCODE pipeline documentation before submission.
+### Challenge 3: Monitoring Long Jobs
+- olution: Automated email notifications using SLURM’s `--mail-type` flag.
+
+## 6. Conclusion
+This project demonstrated the ability to preprocess and analyze ATAC-seq data using the ENCODE pipeline in an HPC environment. The workflow is highly scalable and can be adapted to process additional samples efficiently.
