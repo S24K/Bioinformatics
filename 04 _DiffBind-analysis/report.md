@@ -89,10 +89,6 @@ The table below summarizes key results from the DESeq2 analysis.
 - **Cause**: Path issue or metadata error.
 - **Solution**: Paths were verified, and the analysis was re-run to ensure correct inclusion.
 
-### Disk Space Error
-- **Problem**: Error saving results due to disk space.
-- **Solution**: Temporary files and unused outputs were removed to free space.
-
 ---
 
 ## Conclusion
